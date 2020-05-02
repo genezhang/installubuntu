@@ -61,15 +61,15 @@ chmod +x dkms-remove.sh
 sudo ./dkms-install.sh
 ```
 
-  If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
+   If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
 
-  If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
+   If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
 
-  In the install process, it may ask you for a secure boot password. Type in twice.
+   In the install process, it may ask you for a secure boot password. Type in twice.
 
 10. Reboot the system after taking USB stick out. If necessary, enter BIOS setup to disable secure boot again. Otherwise the new installed driver will not work.
 
-You will be happy to see WIFI now working. A nice Ubuntu laptop!
+   Now you can get to setting and set wifi to connect to internet. You will be happy to see WIFI now working. A nice Ubuntu laptop!
 
 I had some problem with wakeup from sleep on my first laptop after installation. After some struggles eventually it worked.
 I believe it was because of new hardware that Ubuntu needs to get used to :-).
