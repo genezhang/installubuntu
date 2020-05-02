@@ -25,7 +25,7 @@ XX999-XXXXX-XX9XX-XXXXX-X99X9
 
 3. Create a bootable USB stick. Follow the steps here: [Create a bootable USB stick](https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows#1-overview)
 
- There is a confusion point in the description of Boot selection in Rufus in the above page. Click `SELECT` button to choose iso file, there is no need to pick `FreeDOS` on the menu.
+ There is a minor confusion point in the description of Boot selection in Rufus in the above page. Click `SELECT` button to choose iso file, there is no need to pick `FreeDOS` on the menu.
 
 4. Power down the laptop, and when powering on, repeated press `Esc` key to get system setup menu and press F10 to get BIOS setup menu.
 
@@ -42,10 +42,10 @@ you can also choose install.
 6. When you install, choose standard installation. Most likely there is no network so other options that requires a network connection won't work. Once you finish the installation, everything should work, except for the network. So the next step is the key.
 
 7. Install WIFI driver. Since there is no wire ethernet interface, the only lucky option is that Bluetooth works by default so I used it for temporary
- internet connection through my mobile (Android) phone bluetooth tithering.
+ internet connection through my mobile (Android) phone bluetooth tethering.
 
    1. From phone Settings, you pair your laptop bluethooth with your mobile phone. Then from the mobile phone, enable bluetooth tethering
- (Inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
+ (inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
 
   2. The wifi adapter is from RealTek, rtl8821ce, you can verify it with the command:
 ```
@@ -62,11 +62,11 @@ chmod +x dkms-install.sh
 chmod +x dkms-remove.sh
 sudo ./dkms-install.sh
 ```
-If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
+   If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
 
-If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
+   If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
 
-In the install process, it may ask you for a secure boot password. Type in twice.
+   In the install process, it may ask you for a secure boot password. Type in twice.
 
 8. Reboot the system by taking USB stick out. If necessary, enter BIOS setup to disable secure boot again.
 
