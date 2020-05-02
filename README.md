@@ -41,14 +41,16 @@ you can also choose install.
 
 6. When you install, choose standard installation. Most likely there is no network so other options that requires a network connection won't work. Once you finish the installation, everything should work, except for the network. So the next step is the key.
 
-7. Install WIFI driver. Since there is no wire ethernet interface, the only lucky option is that Bluetooth works by default so I used it for temporary internet connection through my mobile (Android) phone bluetooth tethering.
+7. Use bluetooth for networking to install WIFI driver. Since there is no wire ethernet interface, the only lucky option is that Bluetooth works by default so I used it for temporary internet connection through my mobile (Android) phone bluetooth tethering.
 
-   1. From phone Settings, you pair your laptop bluethooth with your mobile phone. Then from the mobile phone, enable bluetooth tethering (inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
-   2. The wifi adapter is from RealTek, rtl8821ce, you can verify it with the command:
+   From phone Settings, you pair your laptop bluethooth with your mobile phone. Then from the mobile phone, enable bluetooth tethering (inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
+
+8. The wifi adapter is from RealTek, rtl8821ce, you can verify it with the command:
 ```
 lspci -nnk | grep -A2 0280
 ```
-   3. Follow the following steps to make and install the driver (credit to [this AskUbuntu post](https://askubuntu.com/questions/1071299/how-to-install-wi-fi-driver-for-realtek-rtl8821ce-on-ubuntu-18-04) ):
+
+9. Follow the following steps to make and install the driver (credit to [this AskUbuntu post](https://askubuntu.com/questions/1071299/how-to-install-wi-fi-driver-for-realtek-rtl8821ce-on-ubuntu-18-04) ):
 ```
 sudo apt-get update
 sudo apt-get install --reinstall git dkms build-essential linux-headers-$(uname -r)
@@ -64,7 +66,7 @@ sudo ./dkms-install.sh
 
     In the install process, it may ask you for a secure boot password. Type in twice.
 
-8. Reboot the system by taking USB stick out. If necessary, enter BIOS setup to disable secure boot again.
+10. Reboot the system after taking USB stick out. If necessary, enter BIOS setup to disable secure boot again. Otherwise the new installed driver will not work.
 
 You will be happy to see WIFI now working. A nice Ubuntu laptop!
 
