@@ -21,11 +21,11 @@ XX999-XXXXX-XX9XX-XXXXX-X99X9
 
 2. Download Ubuntu release binary, choose desktop version from here: [Ubuntu download](https://ubuntu.com/download/desktop)
 
-  Use checksum to verify the integrity of the binary. I used [ChecksumCalculator](http://www.tucows.com/preview/1477381/Checksum-Calculator) on Windows.
+   Use checksum to verify the integrity of the binary. I used [ChecksumCalculator](http://www.tucows.com/preview/1477381/Checksum-Calculator) on Windows.
 
 3. Create a bootable USB stick. Follow the steps here: [Create a bootable USB stick](https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows#1-overview)
 
- There is a confusion point in the description of Boot selection in Rufus in the above page. Click `SELECT` button to choose iso file, there is no need to pick `FreeDOS` on the menu.
+   There is a minor confusion point in the description of Boot selection in Rufus in the above page. Click `SELECT` button to choose iso file, there is no need to pick `FreeDOS` on the menu.
 
 4. Power down the laptop, and when powering on, repeated press `Esc` key to get system setup menu and press F10 to get BIOS setup menu.
 
@@ -41,18 +41,16 @@ you can also choose install.
 
 6. When you install, choose standard installation. Most likely there is no network so other options that requires a network connection won't work. Once you finish the installation, everything should work, except for the network. So the next step is the key.
 
-7. Install WIFI driver. Since there is no wire ethernet interface, the only lucky option is that Bluetooth works by default so I used it for temporary
- internet connection through my mobile (Android) phone bluetooth tithering.
+7. Use bluetooth for networking to install WIFI driver. Since there is no wire ethernet interface, the only lucky option is that Bluetooth works by default so I used it for temporary internet connection through my mobile (Android) phone bluetooth tethering.
 
-   1. From phone Settings, you pair your laptop bluethooth with your mobile phone. Then from the mobile phone, enable bluetooth tethering
- (Inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
+   From phone Settings, you pair your laptop bluethooth with your mobile phone. Then from the mobile phone, enable bluetooth tethering (inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
 
-  2. The wifi adapter is from RealTek, rtl8821ce, you can verify it with the command:
+8. The wifi adapter is from RealTek, rtl8821ce, you can verify it with the command:
 ```
 lspci -nnk | grep -A2 0280
 ```
 
-  3. Follow the following steps to make and install the driver (credit to [this AskUbuntu post](https://askubuntu.com/questions/1071299/how-to-install-wi-fi-driver-for-realtek-rtl8821ce-on-ubuntu-18-04) ):
+9. Follow the following steps to make and install the driver (credit to [this AskUbuntu post](https://askubuntu.com/questions/1071299/how-to-install-wi-fi-driver-for-realtek-rtl8821ce-on-ubuntu-18-04) ):
 ```
 sudo apt-get update
 sudo apt-get install --reinstall git dkms build-essential linux-headers-$(uname -r)
@@ -62,15 +60,16 @@ chmod +x dkms-install.sh
 chmod +x dkms-remove.sh
 sudo ./dkms-install.sh
 ```
-If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
 
-If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
+   If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
 
-In the install process, it may ask you for a secure boot password. Type in twice.
+   If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
 
-8. Reboot the system by taking USB stick out. If necessary, enter BIOS setup to disable secure boot again.
+   In the install process, it may ask you for a secure boot password. Type in twice.
 
-You will be happy to see WIFI now working. A nice Ubuntu laptop!
+10. Reboot the system after taking USB stick out. If necessary, enter BIOS setup to disable secure boot again. Otherwise the new installed driver will not work.
+
+   Now you can get to setting and set wifi to connect to internet. You will be happy to see WIFI now working. A nice Ubuntu laptop!
 
 I had some problem with wakeup from sleep on my first laptop after installation. After some struggles eventually it worked.
 I believe it was because of new hardware that Ubuntu needs to get used to :-).
