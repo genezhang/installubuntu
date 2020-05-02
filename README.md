@@ -21,11 +21,11 @@ XX999-XXXXX-XX9XX-XXXXX-X99X9
 
 2. Download Ubuntu release binary, choose desktop version from here: [Ubuntu download](https://ubuntu.com/download/desktop)
 
-  Use checksum to verify the integrity of the binary. I used [ChecksumCalculator](http://www.tucows.com/preview/1477381/Checksum-Calculator) on Windows.
+   Use checksum to verify the integrity of the binary. I used [ChecksumCalculator](http://www.tucows.com/preview/1477381/Checksum-Calculator) on Windows.
 
 3. Create a bootable USB stick. Follow the steps here: [Create a bootable USB stick](https://ubuntu.com/tutorials/tutorial-create-a-usb-stick-on-windows#1-overview)
 
- There is a minor confusion point in the description of Boot selection in Rufus in the above page. Click `SELECT` button to choose iso file, there is no need to pick `FreeDOS` on the menu.
+   There is a minor confusion point in the description of Boot selection in Rufus in the above page. Click `SELECT` button to choose iso file, there is no need to pick `FreeDOS` on the menu.
 
 4. Power down the laptop, and when powering on, repeated press `Esc` key to get system setup menu and press F10 to get BIOS setup menu.
 
@@ -60,11 +60,12 @@ chmod +x dkms-install.sh
 chmod +x dkms-remove.sh
 sudo ./dkms-install.sh
 ```
-    If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
 
-    If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
+  If the bluetooth speed is low, be patient. In my case, the download speed is only around 30+KB/s. It took a long time to finish downloading. But it worked.
 
-    In the install process, it may ask you for a secure boot password. Type in twice.
+  If you encounter an apt-get error saying unable to lock a file, do a `ps -ef` to list all processes to see if there is another apt process having locked a lock file. Kill that process if necessary.
+
+  In the install process, it may ask you for a secure boot password. Type in twice.
 
 10. Reboot the system after taking USB stick out. If necessary, enter BIOS setup to disable secure boot again. Otherwise the new installed driver will not work.
 
