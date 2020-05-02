@@ -46,12 +46,10 @@ you can also choose install.
 
    1. From phone Settings, you pair your laptop bluethooth with your mobile phone. Then from the mobile phone, enable bluetooth tethering
  (inside Settings, from "Mobile network" -> "Tethering & portable hotspot" -> "Bluetooth tethering"). In laptop bluetooth setting, choose "connect to internet". Verify you have internet connection with the browser.
-
   2. The wifi adapter is from RealTek, rtl8821ce, you can verify it with the command:
 ```
 lspci -nnk | grep -A2 0280
 ```
-
   3. Follow the following steps to make and install the driver (credit to [this AskUbuntu post](https://askubuntu.com/questions/1071299/how-to-install-wi-fi-driver-for-realtek-rtl8821ce-on-ubuntu-18-04) ):
 ```
 sudo apt-get update
